@@ -346,7 +346,7 @@ public class RoutingProfileManager {
         return null;
     }
 
-    public RouteResult computeRoute(RoutingRequest req) throws Exception {
+    public RouteResult[] computeRoute(RoutingRequest req) throws Exception {
         List<Integer> skipSegments = req.getSkipSegments();
         List<GHResponse> routes = new ArrayList<GHResponse>();
 
@@ -437,7 +437,7 @@ public class RoutingProfileManager {
             c0 = c1;
         }
         routes = enrichDirectRoutesTime(routes);
-        return new RouteResultBuilder().createRouteResult(routes, req, (pathProcessor != null && (pathProcessor instanceof ExtraInfoProcessor)) ? ((ExtraInfoProcessor) pathProcessor).getExtras() : null);
+        return new RouteResultBuilder().createRouteResults(routes, req, (pathProcessor != null && (pathProcessor instanceof ExtraInfoProcessor)) ? ((ExtraInfoProcessor) pathProcessor).getExtras() : null);
     }
 
     /**
