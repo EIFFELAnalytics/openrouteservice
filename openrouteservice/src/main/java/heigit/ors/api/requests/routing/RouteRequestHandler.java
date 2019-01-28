@@ -42,7 +42,7 @@ public class RouteRequestHandler extends GenericHandler {
         this.errorCodes.put("UNKNOWN_PARAMETER", RoutingErrorCodes.UNKNOWN_PARAMETER);
     }
 
-    public  RouteResult generateRouteFromRequest(RouteRequest request) throws StatusCodeException{
+    public RouteResult[] generateRouteFromRequest(RouteRequest request) throws StatusCodeException{
         RoutingRequest routingRequest = convertRouteRequest(request);
 
         try {
