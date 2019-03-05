@@ -35,7 +35,6 @@ import com.vividsolutions.jts.geom.Geometry;
 import com.vividsolutions.jts.geom.GeometryFactory;
 import heigit.ors.common.TravelRangeType;
 import heigit.ors.exceptions.InternalServerException;
-import heigit.ors.exceptions.PointNotFoundException;
 import heigit.ors.exceptions.StatusCodeException;
 import heigit.ors.isochrones.*;
 import heigit.ors.isochrones.statistics.StatisticsProvider;
@@ -860,9 +859,9 @@ public class RoutingProfile {
             if (_astarApproximation != null)
                 req.getHints().put("astarbi.approximation", _astarApproximation);
 
-            if (searchParams.getAlternativeRoutes() > 0) {
+            if (searchParams.getAlternativeRoutesCount() > 0) {
                 req.setAlgorithm("alternative_route");
-                req.getHints().put("alternative_route.max_paths", searchParams.getAlternativeRoutes());
+                req.getHints().put("alternative_route.max_paths", searchParams.getAlternativeRoutesCount());
                 req.getHints().put("alternative_route.max_weight_factor", searchParams.getAlternativeRoutesWeightFactor());
                 req.getHints().put("alternative_route.max_share_factor", searchParams.getAlternativeRoutesShareFactor());
 //              TAKB: contraction hierarchies have to be disabled for alternative routes until GH pulls https://github.com/graphhopper/graphhopper/pull/1524 and we update our fork.

@@ -366,7 +366,7 @@ public class RoutingProfileManager {
         WayPointBearing[] bearings = (req.getContinueStraight() || searchParams.getBearings() != null) ? new WayPointBearing[2] : null;
         double[] radiuses = searchParams.getMaximumRadiuses() != null ? new double[2] : null;
 
-        if (req.getSearchParameters().getAlternativeRoutes() > 1 && coords.length > 2) {
+        if (req.getSearchParameters().getAlternativeRoutesCount() > 1 && coords.length > 2) {
             throw new InternalServerException(RoutingErrorCodes.INVALID_PARAMETER_VALUE, "Alternative routes algorithm does not support more than two way points.");
         }
 

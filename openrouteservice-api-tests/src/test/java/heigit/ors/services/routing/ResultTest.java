@@ -1460,7 +1460,7 @@ public class ResultTest extends ServiceTest {
                 .param("instructions", "true")
                 .param("preference", getParameter("preference"))
                 .param("profile", getParameter("carProfile"))
-                .param("options", "{\"alternative_routes\": 2}")
+                .param("options", "{\"alternative_routes_count\": 2}")
                 .when().log().ifValidationFails()
                 .get(getEndPointName())
                 .then()

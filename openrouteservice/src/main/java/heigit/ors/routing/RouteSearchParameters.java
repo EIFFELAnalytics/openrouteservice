@@ -60,8 +60,7 @@ public class RouteSearchParameters {
     private int[] _avoidCountries = null;
     private BordersExtractor.Avoid _avoidBorders = BordersExtractor.Avoid.NONE;
 
-//  TAKB: parameters weight factor and share factor seem to be ignored by the algorithm, further testing required.
-    private int _alternativeRoutes = -1;
+    private int _alternativeRoutesCount = -1;
     private double _alternativeRoutesWeightFactor = 1.4;
     private double _alternativeRoutesShareFactor = 0.6;
 
@@ -158,12 +157,12 @@ public class RouteSearchParameters {
         this._vehicleType = vehicleType;
     }
 
-    public int getAlternativeRoutes() {
-        return _alternativeRoutes;
+    public int getAlternativeRoutesCount() {
+        return _alternativeRoutesCount;
     }
 
-    public void setAlternativeRoutes(int _alternativeRoutes) {
-        this._alternativeRoutes = _alternativeRoutes;
+    public void setAlternativeRoutesCount(int _alternativeRoutesCount) {
+        this._alternativeRoutesCount = _alternativeRoutesCount;
     }
 
     public double getAlternativeRoutesWeightFactor() {
@@ -369,9 +368,9 @@ public class RouteSearchParameters {
             }
         }
 
-        if (json.has("alternative_routes")) {
+        if (json.has("alternative_routes_count")) {
             try {
-                _alternativeRoutes = json.getInt("alternative_routes");
+                _alternativeRoutesCount = json.getInt("alternative_routes_count");
             } catch (Exception ex) {
                 throw new ParameterValueException(RoutingErrorCodes.INVALID_PARAMETER_FORMAT, "alternative_routes", json.getString("alternative_routes"));
             }
@@ -390,7 +389,6 @@ public class RouteSearchParameters {
                 }
             }
         }
-
     }
 
     private void processWeightings(JSONObject json, ProfileParameters profileParams) throws Exception {
