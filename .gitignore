@@ -13,11 +13,12 @@ nohup.out
 
 .project
 
+# Dont
 # Ignore all app.config files except for the .sample one
-openrouteservice/WebContent/WEB-INF/app.config*
-!openrouteservice/WebContent/WEB-INF/app.config.sample
-openrouteservice/src/main/resources/app.config*
-!openrouteservice/src/main/resources/app.config.sample
+#openrouteservice/WebContent/WEB-INF/app.config*
+#!openrouteservice/WebContent/WEB-INF/app.config.sample
+#openrouteservice/src/main/resources/app.config*
+#!openrouteservice/src/main/resources/app.config.sample
 
 app.config.local
 cgiar_provider/
@@ -27,3 +28,13 @@ target/
 nohup.out
 build/
 cgiar_cache/
+
+# Docker stuff
+docker/logs/
+docker/graphs/
+docker/elevation_cache
+docker/data/elevation_cache
+
+# Also ignore the large OSM files
+*.osm.gz
+*.osm.pbf
