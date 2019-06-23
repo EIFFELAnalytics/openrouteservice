@@ -8,7 +8,7 @@ services:
             context: ../
             args:
                 APP_CONFIG: ./docker/conf/app.config
-                OSM_FILE: ./docker/data/netherlands.osm.gz
+                OSM_FILE: ./docker/data/netherlands-latest.osm.pbf
         volumes:
             - ./graphs:/ors-core/data/graphs
             - ./elevation_cache:/ors-core/data/elevation_cache
