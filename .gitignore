@@ -36,5 +36,5 @@ docker/elevation_cache
 docker/data/elevation_cache
 
 # Also ignore the large OSM files
-*.osm.gz
-*.osm.pbf
+docker/data/*.osm.gz
+docker/data/*.osm.pbf
