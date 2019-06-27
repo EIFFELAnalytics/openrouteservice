@@ -30,11 +30,22 @@ build/
 cgiar_cache/
 
 # Docker stuff
-docker/logs/
-docker/graphs/
-docker/elevation_cache
-docker/data/elevation_cache
+/docker/logs/
+/docker/graphs/
+/docker/elevation_cache/
+/docker/data/elevation_cache/
+/docker/data/*.osm.gz
+/docker/data/*.osm.pbf
 
-# Also ignore the large OSM files
-docker/data/*.osm.gz
-docker/data/*.osm.pbf
+# Also ignore the text files at the root directory
+/.travis.yml
+/CHANGELOG.md
+/CONTRIBUTE.md
+/ISSUE_TEMPLATE.md
+/LICENSE
+/LICENSE.LESSER
+/NOTICE.md
+/PULL_REQUEST_TEMPLATE.md
+
+# Ignore all other .gitignore except this one
+/*/.gitignore
